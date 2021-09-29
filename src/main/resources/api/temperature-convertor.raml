@@ -1,0 +1,50 @@
+#%RAML 1.0
+title: temperatur-convertor
+description: this api is used to convert the temp from celsius to fahrenheit and fahrenheit to celsius
+/temperature:
+  /celsius-fahrenheit:
+    get:
+      queryParameters:
+        temp:
+          default: integer
+          minLength: 1
+          required: true
+          description: to covnert the temp Celsius to Fahrenheit
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                {
+                  "message": "temp sucessfully converted "
+                }
+        400:
+          body:
+            application/json:
+              example:
+                {
+                  "message": "Bad Request"
+                }
+  /fahrenheit-celsius:
+    get:
+      queryParameters:
+        temp:
+          default: integer
+          minLength: 1
+          required: true
+          description: to covnert the temp Fahrenheit to Celsius
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                {
+                  "message": "temp sucessfully converted "
+                }
+        400:
+          body:
+            application/json:
+              example:
+                {
+                  "message": "Bad Request"
+                }
